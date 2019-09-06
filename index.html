@@ -3,18 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Top U.S. headline news, New York Times and other various sources.">
-
+    <meta name="description" content="Calculate indices with spun crit. Enter your values and instantly see results.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-    <!--bootswatch, change name to whatever premade theme. sketchy is used in this one-->
+    <!--bootswatch, change name to whatever pre made theme.-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/materia/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
 
@@ -25,59 +22,57 @@
 <body>
 
     <div class="container">
+        <div class="jumbotron mt-3">
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="calcModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <!-- Modal -->
+            <div class="modal fade" id="calcModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Calculations</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="mcv" class="text-center"></div>
-                        <div id="mchc" class="text-center"></div>
+                        </div>
+                        <div class="modal-body">
+                            <div id="mcv" class="text-center h3"></div>
+                            <div id="mchc" class="text-center h3"></div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- form here -->
+
+            <form class="mt-3 mx-auto">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="hgb">HGB:</label>
+                        <input type="number" class="form-control" id="hgb" placeholder="HGB" value="hgb" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="hct">HCT:</label>
+                        <input type="number" class="form-control" id="hct" placeholder="Spun crit" value="hct" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="rbc">RBC:</label>
+                        <input type="number" class="form-control" id="rbc" placeholder="RBC" required>
+                    </div>
+
+                </div>
+
+
+                <button id="calc-btn" class="btn btn-primary" type="submit" data-toggle="modal" data-target="#calcModal">Calculate</button>
+                <button id="reset" class="btn btn-danger ml-3" type="reset" value="reset">Reset</button>
+            </form>
         </div>
-
-
-        <!-- form here -->
-
-
-
-        <form class="mt-3 mx-auto">
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="hgb">HGB:</label>
-                    <input type="number" class="form-control" id="hgb" placeholder="HGB" value="HGB" required>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="hct">HCT:</label>
-                    <input type="number" class="form-control" id="hct" placeholder="Spun crit" value="HCT" required>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <label for="rbc">RBC:</label>
-                    <input type="number" class="form-control" id="rbc" placeholder="RBC" required>
-                </div>
-
-            </div>
-
-
-            <button id="calc-btn" class="btn btn-primary" type="submit" data-toggle="modal" data-target="#calcModal">Calculate</button>
-            <button class="btn btn-danger" type="reset" value="reset">Reset</button>
-        </form>
-
     </div>
 
 

@@ -1,11 +1,9 @@
-$(document).ready(function($) {
+$(document).ready(function() {
 	
     let calcBtn = $('#calc-btn');
     
- 
     calcBtn.on('click', (e) => {
         e.preventDefault();
-
         // set up variables
         let hgb = $("#hgb").val();
         let hct = $("#hct").val();
@@ -18,11 +16,15 @@ $(document).ready(function($) {
             // MCV calculation is  Hct *10 / Rbc;
             // mchc calculation is Hgb *100 / Hct;
 
-       
-        $('#mcv').html('Calculated MCV: ' + mcvCalculation.toFixed(1));
-        $('#mchc').html('Calculated MCHC: ' + mchcCalculation.toFixed(1));
-        console.log('mcv : ' + mcvCalculation);
-        console.log('mchc : ' + mchcCalculation);
+            if(isNaN(hgb) || hgb === "" || isNaN(hct) || hct === "" || isNaN(rbc) || rbc === ""){
+                $('#mcv').html('All fields Required!');
+                $('#mchc').html('');
 
+            } else {
+                $('#mcv').html('Calculated MCV: ' + mcvCalculation.toFixed(2));
+                $('#mchc').html('Calculated MCHC: ' + mchcCalculation.toFixed(2));
+                console.log('mcv : ' + mcvCalculation);
+                console.log('mchc : ' + mchcCalculation);
+            }
     });
 });
